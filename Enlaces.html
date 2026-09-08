@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Directorio de Enlaces</title>
+    <title>Directorio de Enlaces Institucionales</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
         /* =========================================
            VARIABLES Y CONFIGURACIÓN BASE
            ========================================= */
         :root {
-            --imms-green: #006341;       /* Verde institucional IMSS */
-            --imms-green-hover: #008558; /* Verde brillante para hover */
-            --dark-text: #1a2b22;        /* Texto oscuro con tinte verde */
-            --bg-color-1: #f0f7f4;       /* Fondo claro 1 */
-            --bg-color-2: #e2f0ea;       /* Fondo claro 2 */
+            --imms-green: #006341;       
+            --imms-green-hover: #008558; 
+            --dark-text: #1a2b22;        
+            --bg-color-1: #f0f7f4;       
+            --bg-color-2: #e2f0ea;       
         }
 
         * {
@@ -28,7 +28,6 @@
            FONDO ANIMADO Y ESTRUCTURA
            ========================================= */
         body {
-            /* Degradado animado para dar movimiento sutil al fondo */
             background: linear-gradient(-45deg, var(--bg-color-1), var(--bg-color-2), #ffffff, var(--bg-color-1));
             background-size: 400% 400%;
             animation: gradientBG 12s ease infinite;
@@ -42,29 +41,26 @@
 
         .container {
             width: 100%;
-            max-width: 500px;
+            max-width: 650px; /* Se amplió ligeramente para acomodar textos de las NOMs */
             background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px); /* Efecto cristal minimalista */
+            backdrop-filter: blur(10px); 
             -webkit-backdrop-filter: blur(10px);
             padding: 3rem 2rem;
             border-radius: 24px;
             box-shadow: 0 20px 40px rgba(0, 99, 65, 0.08);
             text-align: center;
             
-            /* Animación de entrada del contenedor */
             animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
             opacity: 0;
             transform: translateY(30px);
         }
 
-       
-.animated-image {
-    width: 70%;
-    height: 70%;
-    object-fit: cover; /* Mantiene la proporción de la imagen */
-          animation: float 3s ease-in-out infinite;
-}
-
+        .animated-image {
+            width: 70%;
+            height: 70%;
+            object-fit: cover; 
+            animation: float 3s ease-in-out infinite;
+        }
 
         h1 {
             font-weight: 700;
@@ -100,23 +96,27 @@
             padding: 1.2rem 1.5rem;
             border-radius: 16px;
             font-weight: 500;
-            font-size: 1.05rem;
+            font-size: 0.95rem; /* Ajustado para textos normativos */
+            text-align: left;
             border: 2px solid transparent;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             
-            /* Animación de entrada en cascada */
             opacity: 0;
             transform: translateY(20px);
             animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
             animation-delay: calc(var(--order) * 0.15s + 0.3s);
         }
 
-        .link-btn .arrow {
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        .link-btn span:first-child {
+            padding-right: 15px;
         }
 
-        /* EFECTOS HOVER (El "mucho movimiento" al interactuar) */
+        .link-btn .arrow {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            flex-shrink: 0;
+        }
+
         .link-btn:hover {
             background: var(--imms-green);
             color: #ffffff;
@@ -164,35 +164,84 @@
 
     <div class="container">
         <!-- Encabezado con ícono animado -->
-<div class="icon-container image-container">
-    <img src="IMSS-Logo.png" alt="Icono" class="animated-image">
-</div>
+        <div class="icon-container image-container">
+            <img src="IMSS-Logo.png" alt="Icono" class="animated-image">
+        </div>
         
         <header>
-            <h1>Bienvenido</h1>
-            <p>Accede rápidamente a todos los documentos.</p>
+            <h1>Recursos Normativos IMSS</h1>
+            <p>Accede rápidamente a protocolos, normas y plataformas de educación continua.</p>
         </header>
 
-        <!-- Lista de enlaces. La variable --order define el retraso de la animación -->
+        <!-- Lista de enlaces -->
         <nav class="links-grid">
-            <a href="#tramites" class="link-btn" style="--order: 1;">
-                <span>Trámites Digitales</span>
+            <a href="https://www.imss.gob.mx/SERIMSS/protocolos" target="_blank" class="link-btn" style="--order: 1;">
+                <span>Protocolo Básico SER IMSS</span>
                 <span class="arrow">→</span>
             </a>
-            <a href="#directorio" class="link-btn" style="--order: 2;">
-                <span>Directorio Médico</span>
+            
+            <a href="https://platiica.economia.gob.mx/wp-content/uploads/sites/2/PDF_Normas_Publicas/019ssa32013.pdf" target="_blank" class="link-btn" style="--order: 2;">
+                <span>NOM-019-SSA3-2013 (Enfermería)</span>
                 <span class="arrow">→</span>
             </a>
-            <a href="#documentos" class="link-btn" style="--order: 3;">
-                <span>Documentos Oficiales</span>
+            
+            <a href="https://platiica.economia.gob.mx/wp-content/uploads/sites/2/PDF_Normas_Publicas/004ssa32012.pdf" target="_blank" class="link-btn" style="--order: 3;">
+                <span>NOM-004-SSA3-2012 (Expediente Clínico)</span>
                 <span class="arrow">→</span>
             </a>
-            <a href="#citas" class="link-btn" style="--order: 4;">
-                <span>Portal de Citas</span>
+            
+            <a href="https://platiica.economia.gob.mx/wp-content/uploads/sites/2/PDF_Normas_Publicas/045ssa22005.pdf" target="_blank" class="link-btn" style="--order: 4;">
+                <span>NOM-045-SSA2-2005 (Infecciones Nosocomiales)</span>
                 <span class="arrow">→</span>
             </a>
-            <a href="#ayuda" class="link-btn" style="--order: 5;">
-                <span>Soporte y Ayuda</span>
+            
+            <a href="https://platiica.economia.gob.mx/wp-content/uploads/sites/2/PDF_Normas_Publicas/087-ecoli-ssa-2003.pdf" target="_blank" class="link-btn" style="--order: 5;">
+                <span>NOM-087-SEMARNAT (Residuos Peligrosos RPBI)</span>
+                <span class="arrow">→</span>
+            </a>
+            
+            <a href="https://platiica.economia.gob.mx/wp-content/uploads/sites/2/PDF_Normas_Publicas/253ssa12012.pdf" target="_blank" class="link-btn" style="--order: 6;">
+                <span>NOM-253-SSA1-2012 (Disposición de Sangre)</span>
+                <span class="arrow">→</span>
+            </a>
+            
+            <a href="https://platiica.economia.gob.mx/wp-content/uploads/sites/2/PDF_Normas_Publicas/022ssa32012.pdf" target="_blank" class="link-btn" style="--order: 7;">
+                <span>NOM-022-SSA3-2012 (Terapia de Infusión)</span>
+                <span class="arrow">→</span>
+            </a>
+            
+            <a href="https://platiica.economia.gob.mx/normalizacion/catalogo-mexicano-de-normaswd_asp-id29/" target="_blank" class="link-btn" style="--order: 8;">
+                <span>Catálogo Mexicano de Normas (NOM)</span>
+                <span class="arrow">→</span>
+            </a>
+            
+            <a href="https://www.gob.mx/cms/uploads/attachment/file/920141/AESP_CSG-DGCES_16_junio_2023.pdf" target="_blank" class="link-btn" style="--order: 9;">
+                <span>Acciones Esenciales de Seguridad del Paciente</span>
+                <span class="arrow">→</span>
+            </a>
+            
+            <a href="https://reposipot.imss.gob.mx/normatividad/DNMR/Procedimiento/2660-003-056.pdf" target="_blank" class="link-btn" style="--order: 10;">
+                <span>Procedimiento de Hospitalización (Segundo Nivel)</span>
+                <span class="arrow">→</span>
+            </a>
+            
+            <a href="https://www.imss.gob.mx/sites/all/statics/imssBienestar/marcoJuridico/codigo-conducta.pdf" target="_blank" class="link-btn" style="--order: 11;">
+                <span>Código de Conducta</span>
+                <span class="arrow">→</span>
+            </a>
+            
+            <a href="https://innovacioneducativa.imss.gob.mx/deps/" target="_blank" class="link-btn" style="--order: 12;">
+                <span>Plataforma: Innovación Educativa</span>
+                <span class="arrow">→</span>
+            </a>
+
+            <a href="https://educacionensalud.imss.gob.mx/p/portal/" target="_blank" class="link-btn" style="--order: 13;">
+                <span>Plataforma: Educación en Salud</span>
+                <span class="arrow">→</span>
+            </a>
+
+            <a href="https://sicaviqa.imss.gob.mx/SICAVIMSS/" target="_blank" class="link-btn" style="--order: 14;">
+                <span>Plataforma: SICAVIQA</span>
                 <span class="arrow">→</span>
             </a>
         </nav>
